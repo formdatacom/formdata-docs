@@ -32,6 +32,7 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [require.resolve('docusaurus-lunr-search')],
   presets: [
     [
       'classic',
@@ -39,10 +40,9 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // routeBasePath: '/',
           editUrl:
-            'https://github.com/formdatacom/form-data-docs',
+            'https://github.com/formdatacom/formdata-docs',
         },
         blog: {
           showReadingTime: true,
