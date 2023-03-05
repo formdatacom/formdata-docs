@@ -14,7 +14,7 @@ const config = {
   url: 'https://form-data.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/pages/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -64,7 +64,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/formdata-social-card.png',
       navbar: {
-        title: 'Form-Data',
+        title: 'Form-Data documentation',
         logo: {
           alt: 'Form-Data Logo',
           src: 'img/formdata-logo-calig-md.png',
