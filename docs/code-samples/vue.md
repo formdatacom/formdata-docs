@@ -3,6 +3,6 @@ sidebar_position: 1
 description: Using Form-Data in a plain HTML form 
 ---
 
-# Vue
+# Vue 
 
 Coming soon...
