@@ -1,0 +1,9 @@
+{
+  "label": "Emails",
+  "position": 6,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "How to send notification emails and auto response emails"
+  }
+}

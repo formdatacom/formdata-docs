@@ -1,0 +1,8 @@
+{
+  "label": "Spam filtering",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "How to stop forms spam bots using Form-Data"
+  }
+}
