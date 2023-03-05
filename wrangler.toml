@@ -1,0 +1,12 @@
+name = "form-data-docs"
+compatibility_date = "2023-03-05"
+compatibility_flags = []
+main = "workers-site/index.js"
+
+account_id = 'c4a44021bc47f9a2fa9f08bf99d81710'
+# workers_dev = true
+route = 'https://form-data.com/pages*'
+#usage_model = ''
+
+[site]
+bucket = "./build"

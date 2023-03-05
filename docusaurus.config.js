@@ -31,8 +31,6 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-  trailingSlash: false,
   plugins: [require.resolve('docusaurus-lunr-search')],
   presets: [
     [
@@ -45,13 +43,13 @@ const config = {
           editUrl:
             'https://github.com/formdatacom/formdata-docs',
         },
-        blog: {
+        blog: false /* {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/formdatacom/form-data-docs',
-        },
+        } */ ,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -77,7 +75,7 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/formdatacom/formdata-docs',
             label: 'GitHub',
@@ -92,8 +90,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Quick start',
+                to: '/docs/quick-start',
               },
             ],
           },
@@ -101,17 +99,9 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+                label: 'Community portal',
+                href: 'https://community.form-data.com',
+              }
             ],
           },
           {
@@ -123,7 +113,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/formdatacom/formdata-docs',
               },
             ],
           },
