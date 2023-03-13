@@ -31,7 +31,28 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  plugins: [require.resolve('docusaurus-lunr-search')],
+  plugins: [
+    require.resolve('docusaurus-lunr-search'),
+    [
+      'content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'community',
+        path: 'legal',
+        routeBasePath: 'legal',
+        editUrl: ({locale, versionDocsDirPath, docPath}) => {
+          if (locale !== defaultLocale) {
+            return `https://crowdin.com/project/docusaurus-v2/${locale}`;
+          }
+          return `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`;
+        },
+        remarkPlugins: [],
+        sidebarPath: require.resolve('./sidebarsLegal.js'),
+        showLastUpdateAuthor: false,
+        showLastUpdateTime: true,
+      }),
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -40,8 +61,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // routeBasePath: '/',
-          editUrl:
-            'https://github.com/formdatacom/formdata-docs',
+          editUrl: 'https://github.com/formdatacom/formdata-docs'
         },
         blog: false /* {
           showReadingTime: true,
@@ -64,16 +84,26 @@ const config = {
       image: 'img/formdata-social-card.png',
       navbar: {
         title: 'Form-Data documentation',
+        hideOnScroll: true,
         logo: {
           alt: 'Form-Data Logo',
-          src: 'img/formdata-logo-calig-md.png',
+          src: 'img/formdata-logo-calig.svg',
+          srcDark: 'img/formdata-logo-calig-dark.svg',
+          width: 44,
+          height: 44,
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'docs/intro',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            type: 'docSidebar',
+            position: 'right',
+            sidebarId: 'legalSidebar',
+            label: 'Legal',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {

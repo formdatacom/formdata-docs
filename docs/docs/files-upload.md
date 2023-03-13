@@ -167,7 +167,7 @@ Chinese - TAIWAN -                   zh_TW
 
 ### Files retention
 You can control how much time uploaded files will be kept in your storage. This is useful for both regulation management and capacity optimization. This is controlled from your form's settings page in Form-Data web application.
-Refer to [Files retention](data-retention#files-retention) for more information.
+Refer to [Files retention](data-retention.md#files-retention) for more information.
 ![Files retention](/img/file-retention.png)
 
 ### Emailing links to files
