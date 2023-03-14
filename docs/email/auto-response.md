@@ -12,7 +12,7 @@ To enable auto-responses:
 2. Scroll down to _Auto-respond to users_, and turn the toggle _Send auto responses_ on ⓶
 
 :::info Important
-Emails will be sent to the email address that the user have provided in the form. Make sure that the name of the email field is properly configured in the [email field name](../basic-settings#email-field-name)
+Emails will be sent to the email address that the user have provided in the form. Make sure that the name of the email field is properly configured in the [email field name](../basic-settings.md#email-field-name)
 :::
 
 Make sure you further configure the rest of the settings below in order to avoid undesired results

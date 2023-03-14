@@ -12,7 +12,7 @@ The _Form name_ lets you give a custom name to a form handler. This name is only
 
 ### Email field name
 
-This setting is used by both the [spam filter](spam-filteruto-filtering.md) and the [auto-respond](email/auto-response.md) feature, and therefore it is important to make sure that it's set correctly.
+This setting is used by both the [spam filter](./spam-filter/auto-filtering) and the [auto-respond](./email/auto-response) feature, and therefore it is important to make sure that it's set correctly.
 
 You need to provide the `name` of the input field in your HTML form that is used to collect the users' email address.
 

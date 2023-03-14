@@ -37,15 +37,10 @@ const config = {
       'content-docs',
       /** @type {import('@docusaurus/plugin-content-docs').Options} */
       ({
-        id: 'community',
+        id: 'legal',
         path: 'legal',
         routeBasePath: 'legal',
-        editUrl: ({locale, versionDocsDirPath, docPath}) => {
-          if (locale !== defaultLocale) {
-            return `https://crowdin.com/project/docusaurus-v2/${locale}`;
-          }
-          return `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`;
-        },
+        editUrl: 'https://crowdin.com/project/docusaurus-v2/${locale}',
         remarkPlugins: [],
         sidebarPath: require.resolve('./sidebarsLegal.js'),
         showLastUpdateAuthor: false,
@@ -61,7 +56,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // routeBasePath: '/',
-          editUrl: 'https://github.com/formdatacom/formdata-docs'
+          editUrl: 'https://github.com/formdatacom/formdata-docs',
         },
         blog: false /* {
           showReadingTime: true,
@@ -95,16 +90,28 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'docs/intro',
+            docId: 'intro',
             position: 'left',
             label: 'Docs',
           },
-          {
-            type: 'docSidebar',
-            position: 'right',
-            sidebarId: 'legalSidebar',
-            label: 'Legal',
-          },
+            {
+                to: '/legal/terms-of-use',
+                label: 'Legal',
+                position: 'left',
+                activeBaseRegex: `/legal/`,
+            },
+          // {
+          //   type: 'doc',
+          //   docId: 'legal/terms-of-use',
+          //   position: 'right',
+          //   label: 'Legal',
+          // },
+          // {
+          //   type: 'docSidebar',
+          //   position: 'right',
+          //   sidebarId: 'legalSidebar',
+          //   label: 'Legal',
+          // },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/formdatacom/formdata-docs',
@@ -117,32 +124,25 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
             items: [
               {
                 label: 'Quick start',
                 to: '/docs/quick-start',
               },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
               {
                 label: 'Community portal',
                 href: 'https://community.form-data.com',
-              }
-            ],
-          },
-          {
-            title: 'More',
-            items: [
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/formdatacom/formdata-docs',
               },
+              {
+                label: 'Contact',
+                href: 'https://form-data.com/contact',
+              },
             ],
-          },
+          }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Form-Data, Inc. Built with Docusaurus.`,
       },

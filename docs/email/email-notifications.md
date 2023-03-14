@@ -53,4 +53,4 @@ It is highly recommended setting this to a short period of time in order to redu
 :::
 
 :::info Note
-The maximum number of days that you can set is defined by [_Files retention_](../data-retention#files-retention) setting
+The maximum number of days that you can set is defined by [_Files retention_](../data-retention.md#files-retention) setting
