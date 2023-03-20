@@ -58,13 +58,13 @@ const config = {
           // routeBasePath: '/',
           editUrl: 'https://github.com/formdatacom/formdata-docs',
         },
-        blog: false /* {
+        blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/formdatacom/form-data-docs',
-        } */ ,
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -94,25 +94,13 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-            {
-                to: '/legal/terms-of-use',
-                label: 'Legal',
-                position: 'left',
-                activeBaseRegex: `/legal/`,
-            },
-          // {
-          //   type: 'doc',
-          //   docId: 'legal/terms-of-use',
-          //   position: 'right',
-          //   label: 'Legal',
-          // },
-          // {
-          //   type: 'docSidebar',
-          //   position: 'right',
-          //   sidebarId: 'legalSidebar',
-          //   label: 'Legal',
-          // },
           // {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/legal/terms-of-use',
+            label: 'Legal',
+            position: 'left',
+            activeBaseRegex: `/legal/`,
+          },
           {
             href: 'https://github.com/formdatacom/formdata-docs',
             label: 'GitHub',
@@ -144,7 +132,7 @@ const config = {
             ],
           }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Form-Data, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Form-Data. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

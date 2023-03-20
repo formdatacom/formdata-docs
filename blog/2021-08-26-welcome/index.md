@@ -1,25 +1,17 @@
 ---
 slug: welcome
 title: Welcome
-authors: [slorber, yangshun]
-tags: [facebook, hello, docusaurus]
+authors: 
+  - dan
+tags:
+  - hello
 ---
 
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+In this blog I'll publish from time to time content that may be relevant for Form-Data users - makers of all kinds - developers, entrepreneurs, designers, freelancers and agencies.
 
-Simply add Markdown files (or folders) to the `blog` directory.
+If there's anything that you'd like to learn more about, feel free to write to me and let me know.
 
-Regular blog authors can be added to `authors.yml`.
+Hope you find this interesting.
 
-The blog post date can be extracted from filenames, such as:
+- Dan
 
-- `2019-05-30-welcome.md`
-- `2019-05-30-welcome/index.md`
-
-A blog post folder can be convenient to co-locate blog post images:
-
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
-
-The blog supports tags as well!
-
-**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.
