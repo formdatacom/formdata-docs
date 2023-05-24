@@ -12,7 +12,7 @@ To use the this technique, you will have add a hidden field to your web form tha
 When a bot fills out the honeypot field, it triggers the spam filter.
 
 :::tip
-This technique doesn't inconvenience your real users, as they are unaware of the hidden field.
+This technique doesn't cause any inconvenience for your real users, as they are unaware of the hidden field.
 :::
 
 To enable this option:
