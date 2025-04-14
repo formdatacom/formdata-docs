@@ -4,20 +4,32 @@ sidebar_position: 1
 
 # Terms of use
 
-By using Form-Data website located at https://www.form-data.com (the "Site") (collectively, the "Service"), you are agreeing to be bound by the following terms and conditions (“Terms of Service”). IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND SUCH ENTITY, ITS AFFILIATES AND ALL USERS WHO ACCESS OUR SERVICES THROUGH YOUR ACCOUNT TO THESE TERMS AND CONDITIONS, IN WHICH CASE THE TERMS “YOU” OR “YOUR” SHALL REFER TO SUCH ENTITY, ITS AFFILIATES AND USERS ASSOCIATED WITH IT. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SERVICES.
+By using Form-Data website located at https://form-data.com or any of its subdomains (the "Site") (collectively, the "Service"), you are agreeing to be bound by the following terms and conditions (“Terms of Service”). IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND SUCH ENTITY, ITS AFFILIATES AND ALL USERS WHO ACCESS OUR SERVICES THROUGH YOUR ACCOUNT TO THESE TERMS AND CONDITIONS, IN WHICH CASE THE TERMS “YOU” OR “YOUR” SHALL REFER TO SUCH ENTITY, ITS AFFILIATES AND USERS ASSOCIATED WITH IT. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SERVICES.
 
 Form-Data ("we", "us", or "our") reserves the right to update and change the Terms of Service from time to time at our discretion without notice. Any new features that augment or enhance the current Service, including the release of new tools and resources, shall be subject to the Terms of Service. Continued use of the Service after any such changes shall constitute your consent to such changes.
 
 Violation of any of the terms listed below may result in the termination of your Account. While we prohibit such conduct and Content on the Service, you understand and agree that we cannot be responsible for the Content posted on the Service and you nonetheless may be exposed to such materials. You agree to use the Service at your own risk.
 
 ## Account Terms
-
 * You must be 18 years or older to use this Service, and the minimum of the legal age in your country.
 * You must be a human. Accounts registered by “bots” or other automated methods are not permitted.
 * You must provide your name, a valid email address, and any other information requested in order to complete the signup process.
 * You are responsible for maintaining the security of your account and password. We cannot and will not be liable for any loss or damage from your failure to comply with this security obligation. Your login may only be used by one person – a single login shared by multiple people is not permitted.
 * You are responsible for all Content posted and activity that occurs under your account (even when Content is posted by others who have accounts under your account).
-* You may not use the Service for any illegal or unauthorized purpose. You must not, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright or trademark laws).
+
+## Prohibited Uses
+* You must not use the Service for any illegal or unauthorized purpose. You must not, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright or trademark laws).
+* You agree not to use the Service for any unlawful, harmful, or abusive purposes. Specifically, you must not use the Service to:
+  * Engage in fraud, identity theft, phishing, or other deceptive practices.
+  * Distribute spam, unsolicited marketing, or bulk messages.
+  * Collect or process sensitive personal data without proper authorization.
+  * Promote, distribute, or facilitate pornography or sexually explicit content.
+  * Sell, distribute, or promote illegal substances, weapons, or other contraband.
+  * Engage in harassment, threats, or hate speech.
+  * Violate the privacy or rights of others, including collecting or sharing personal data without consent.
+  * Interfere with or disrupt the integrity or performance of our service.
+* We reserve the right to investigate any suspected violations and take appropriate action, including suspending or terminating accounts, reporting unlawful activity to authorities, and pursuing legal remedies. 
+* Accounts that are suspended or terminated due to violations of this section are not eligible for any refunds. This includes, but is not limited to, unused credits, prepaid subscription periods, or any other fees already paid.
 
 ## Copyright and Content Ownership
 * We claim no intellectual property rights over the material you provide to the Service. Your profile and materials uploaded remain yours.

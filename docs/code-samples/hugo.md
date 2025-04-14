@@ -175,7 +175,7 @@ Click the _Email_ menu on the left. Enable email notifications toggle as seen be
 
 * **Send notifications to** - Enter the email address where you want to get the form data. You can enter multiple email addresses separated by comma or new line
 * **Sender's name** - this is the name that will appear in the from field of the email
-* **Subject** - this is the email's subject line. You can embed values from the submitted data by placing the field name in double curly brackets. E.g. A new message from {{email}}
+* **Subject** - this is the email's subject line. You can embed values from the submitted data by placing the field name in double curly brackets. E.g. A new message from `{{email}}`
   It is highly recommended to embed a field, because some email clients, such as gmail, are grouping all emails with same sender and subject into one line or thread, making it hard to manage multiple emails
 * **Reply to visitor's address** - turn this on if you want to be able to reply to the email in order to get back to your user who filled-in the form
 * **Reply-to address** - if you haven't used the previous option, you can set here an email address that will be used as reply-to address
