@@ -40,7 +40,7 @@ validation: required
 fd preview --name contact
 ```
 
-Edit your form file until you're happy with the result. See detailed instructions in [fd files](.fd-files.md).
+Edit your form file until you're happy with the result. See detailed instructions in [fd files](fd-files.md).
 
 ## 4. Deploy the form to production
 
