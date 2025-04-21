@@ -25,12 +25,12 @@ The script loader has to be placed **just once** in your website. It can be adde
 
 ```html
 <script>
-  (function (j,o,y,f,O,r,m) {
-    j[f] = j[f] || function () { (j[f].q = j[f].q || []).push(arguments) };
-    r = o.createElement(y), m = o.getElementsByTagName(y)[0];
-    r.id = f; r.src = O; r.async = 1; m.parentNode.insertBefore(r, m);
+  (function (j,o,y,e,m,b,d) {
+    j[e] ??= function () { (j[e].q ??= []).push(arguments) };
+    j[e].init ??= x => new Promise(s => j[e]('init', x||{}, s))
+    b = o.createElement(y), d = o.getElementsByTagName(y)[0];
+    b.id = e; b.src = m; b.async = 1; d.parentNode.insertBefore(b, d);
   }(window, document, 'script', 'fd', 'https://embed.jolly.tools/widget.js'));
-</script>
 ```
 
 The only thing that you can change in this code snippet is the name of the global variable `fd`. You should do that if it happens to conflict with another global variable with the same name that you have in your site.
@@ -38,7 +38,9 @@ The only thing that you can change in this code snippet is the name of the globa
 Next, you need to call the `init` command. Again, this has to be done just once, and therefore it is recommended to do it right after the loader script, in the same `<script>` tag.
 
 ```javascript
-fd('init', {})
+await fd.init({ /*
+    debug: true
+*/})
 ```
 
 ## Rendering code
@@ -47,7 +49,7 @@ In order to render a form or a trigger (a floating button or a tab), you should 
 #### `render` command
 
 ```js
-fd('render', {/*render options*/})
+const formApi = await fd.render({/*render options*/})
 ```
 
 You should place this in the page that you want the widget to be rendered. It must be called **after** the script loader.
@@ -218,7 +220,7 @@ If you prefer creating your own trigger that will show and hide the form, you sh
 
 ```javascript
 // This will not actually render anything, but you still need to call it
-fd('render', {
+const formApi = await fd.render({
   url: '<YOUR_FORM_URL>/embed',
   id: 'contactForm',
   mode: 'sidebar',
@@ -230,15 +232,14 @@ fd('render', {
   },
 )
 // Call these commands from your own custom button handler
-fd('open', {id: 'contactForm'})
-fd('close', {id: 'contactForm'})
-fd('toggle', {id: 'contactForm'})
+formApi.open()
+formApi.close()
+formApi.toggle()
 ```
 
 Notes:
 * The `render` command does not have a `trigger` option, and therefore no button or tab are being rendered
-* The `render` command uses the `id` option, which is used in the commands below to trigger it. It has to be unique in your site (if you use multiple forms)
 * If you have an SPA, and the page that renders the form is being destroyed, you should call the `destory` command in order to avoid memory leak:
   ```javascript
-  fd('destroy', {id: 'contactForm'})
+  formApi.destroy()
   ```
