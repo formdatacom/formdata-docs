@@ -31,6 +31,7 @@ The script loader has to be placed **just once** in your website. It can be adde
     b = o.createElement(y), d = o.getElementsByTagName(y)[0];
     b.id = e; b.src = m; b.async = 1; d.parentNode.insertBefore(b, d);
   }(window, document, 'script', 'fd', 'https://embed.jolly.tools/widget.js'));
+</script>
 ```
 
 The only thing that you can change in this code snippet is the name of the global variable `fd`. You should do that if it happens to conflict with another global variable with the same name that you have in your site.
@@ -38,9 +39,10 @@ The only thing that you can change in this code snippet is the name of the globa
 Next, you need to call the `init` command. Again, this has to be done just once, and therefore it is recommended to do it right after the loader script, in the same `<script>` tag.
 
 ```javascript
-await fd.init({ /*
-    debug: true
-*/})
+  await fd.init({
+    // optionally pass this to see console logs
+    // debug: true  
+  })
 ```
 
 ## Rendering code

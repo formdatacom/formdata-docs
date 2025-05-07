@@ -70,14 +70,6 @@ const config = {
           // routeBasePath: '/',
           editUrl: 'https://github.com/formdatacom/formdata-docs',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/formdatacom/form-data-docs',
-          onUntruncatedBlogPosts: 'ignore',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
