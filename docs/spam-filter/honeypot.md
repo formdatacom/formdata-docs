@@ -3,7 +3,7 @@ sidebar_position: 4
 description: Detect spam bots by using honeypot fields 
 ---
 
-# Hoenypot fields
+# Honeypot fields
 
 The honeypot technique is a simple and effective way to protect your web forms from spam and automated attacks.
 
