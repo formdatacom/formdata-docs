@@ -44,13 +44,13 @@ cd my-project
 
 Now you will find `formdata.config.json` in the root of your project's folder, and an empty `forms` folder. This is where your `.fd` form files will be
 
-## 2. Create a new form file
+## 2. Create a new form definition file (`.fd`)
 
 ```bash
 fd form create --name my-contact-form --template contact
 ```
 
-This command creates a new **form definition file** (`my-contact-form.fd) in your project. A form definition is a local file that describes your form’s structure, fields, and design.
+This command creates a new **form definition file** (`my-contact-form.fd`) in your project. A form definition is a local file that describes your form’s structure, fields, and design.
 
 Before it can receive submissions, this form definition needs to be linked to a workspace form in your [Form-Data dashboard](https://app2.form-data.com). Your workspace form is where submission handling is configured: email notifications, integrations, spam filtering, and more.
 

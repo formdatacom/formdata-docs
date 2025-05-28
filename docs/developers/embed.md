@@ -57,7 +57,7 @@ const formApi = await fd.render({/*render options*/})
 You should place this in the page that you want the widget to be rendered. It must be called **after** the script loader.
 
 :::tip Tip
-See ful render code sample in the [quickstart guide](quickstart.md#5-embed-the-form-into-your-website-optional)
+See full render code sample in the [quickstart guide](quickstart.md#5-embed-the-form-into-your-website-optional)
 :::
 
 Let's look at the render options object:
