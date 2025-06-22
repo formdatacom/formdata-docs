@@ -1,8 +1,8 @@
-
+---
 sidebar_position: 5
 title: .fd files
 description: FD Files
-
+---
 
 # `.fd` Format - Form Definition
 
@@ -48,21 +48,12 @@ Used to add non-input elements like headings or text.
 
 - `h1` through `h6`: Headings
     - Requires `text` property.
-- `text-block`: Paragraph content
-    - Requires `text`
-- `html`: Raw HTML content
-    - Requires `html`
 
 Example:
 
 ```
 type h2
 text Contact Us
-```
-
-```
-type text-block
-text We're happy to hear from you!
 ```
 
 ### 🧾 Input Blocks
@@ -83,7 +74,6 @@ Used to collect user input. Each of these blocks requires at least `name` and `l
 - `slider`
 - `rating`
 - `submit`
-- `button`
 
 Example:
 
@@ -143,15 +133,13 @@ The first indented level after the `options` keyword represents the labels of th
 
 ## ⚠️ Validation Rules
 
-## ⚠️ Validation Rules
-
 Fields may include a `validations` property with one or more rules separated by `|`. Some rules accept arguments, which can be supplied after a colon `:`. Multiple arguments can be comma-separated.
 
 ### 📌 Syntax
 
-\`\`\`
+```
 validations required|length:3,50
-\`\`\`
+```
 
 ### 🧠 Rule Hints
 
@@ -258,16 +246,12 @@ type submit
 label Send
 ```
 
-
-
 ## 🧪 Tips
 
 - Always start with `type form`
 - Use consistent 2-space indentation
 - Avoid tabs (only spaces)
 - Use a linter or parser to validate before deployment
-
-
 
 ## 📌 Roadmap (future support)
 

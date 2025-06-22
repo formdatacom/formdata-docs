@@ -17,3 +17,18 @@ Instead of building forms by hand in HTML or a GUI editor, you define them decla
 * Automate form deployment in CI/CD pipelines
 
 Form-Data CLI fits naturally into modern developer workflows and pairs seamlessly with frameworks like React, Vue, and Svelte.
+
+## Demo
+<div className="" style={{width:'100%',height:null,position:'relative',paddingTop:'52.67%'}} >
+  <iframe style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}
+    allowTransparency="true"
+    src="https://adilo.bigcommand.com/watch/FQGUEs9m"
+    frameBorder="0"
+    allowFullScreen
+    mozAllowFullScreen
+    webkitAllowFullScreen
+    oAllowFullScreen
+    msAllowFullScreen
+    scrolling="no"
+  />
+</div>
