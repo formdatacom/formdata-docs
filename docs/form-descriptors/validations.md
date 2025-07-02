@@ -30,7 +30,7 @@ Example:
 validations +required|length:3,50
 ```
 
-### ✅ Available Rules
+### Available Rules
 
 - `accepted`: The field must be accepted (e.g., terms and conditions).
 - `alpha`: The field may only contain alphabetic characters.

@@ -8,89 +8,93 @@ description: Form blocks
 Here's a full list of all supported blocks: 
 
 ## Content blocks
-* [form](#form)
-* [h1 - h6](#h1---h6)
-* [p](#p)
-* [html](#html)
+[form](#form), [h1 - h6](#h1---h6), [p](#p), [html](#html)
 
 ## Form fields
-* [text](#text)
-* [email](#email)
-* [tel](#tel)
-* [date](#date)
-* [textarea](#textarea)
-* [number](#number)
-* [select](#select)
-* [radio](#radio)
-* [checkbox](#checkbox)
-* [toggle](#toggle)
-* [file](#file)
-* [slider](#slider)
-* [rating](#rating)
-* [submit](#submit)
+[text](#text), [email](#email), [tel](#tel), [date](#date), [textarea](#textarea), [number](#number), [select](#select), [radio](#radio), [checkbox](#checkbox), [toggle](#toggle), [file](#file), [slider](#slider), [rating](#rating), [submit](#submit)
 
 # Common properties
 
 Many of the blocks support the same properties. In the description of each block you'll find the exact list of properties that it supports.
 
-## name
+### name
 The internal name of the field, used to identify it in submissions. This is required for most input fields.
 
-Example:
-`name first_name`
+Example: 
+```
+name first_name
+```
 
-## label
+### label
 The text displayed to the user as the field's label. This is required for most input fields.
 
-Example:
-`label First Name`
+Example: 
+```
+label First Name
+```
 
-## placeholder
+### placeholder
 Hint text displayed in an input field before the user enters a value. You can use it as an example, but it's not advisable to use it instead of providing a proper label or help text.
 
-Example:
-`placeholder Jane`
+Example: 
+```
+placeholder Jane
+```
 
-## validations
+### validations
 Rules to validate user input. See the [Validations](./validations.md) for a full list of available rules.
 
-Example:
-`validations required|min:2`
+Example: 
+```
+validations required|min:2
+```
 
-## help
+### help
 A help text displayed next to the field to provide extra information or instructions.
 
-Example:
-`help We will never spam you or share your email with any 3rd party`
+Example: 
+```
+help We will never spam you or share your email with any 3rd party
+```
 
-## show
-Used for conditional logic. The block will be shown based on the value of another field. See the [Logic](./logic.md) page for more details.
+### show
+Show the field only if this is set to `true`. Can be used with [conditional logic](./logic.md).
 
-Example:
-`show {{ true if some_field=="some value" else false }}`
+Example - show only if `some_field` equals to `"some value"`: 
+```
+show {{ true if some_field=="some value" else false }}
+```
 
-## hide
-Used for conditional logic. The block will be hidden based on the value of another field. See the [Logic](./logic.md) page for more details.
+### hide
+Hide the field only if this is set to `true`. Can be used with [conditional logic](./logic.md).
 
-Example - hide only if `some_field` has a value:
-`hide {{ true if some_field else false }}`
+Example - hide only if `some_field` has a value: 
+```
+hide {{ true if some_field else false }}
+```
 
-## disabled
-If set to `true`, this will disable the field, so the user cannot interact with it.
+### disabled
+If set to `true`, this will disable the field so the user cannot interact with it. Can be used with [conditional logic](./logic.md).
 
-Example - disable as long as `some_field` has no value:
-`disabled {{ true if not some_field else false}}`
+Example - disabled as long as `some_field` has no value: 
+```
+disabled {{ true if not some_field else false}}
+```
 
-## readonly
-If set to `true`, this will make the field read-only. The user can see the value but cannot change it.
+### readonly
+If set to `true`, this will make the field read-only. The user can see and copy the value but cannot change it. Can be used with [conditional logic](./logic.md).
 
-Example - readonly as long as `some_field` has no value:
-`readonly {{ true if not some_field else false}}`
+Example - readonly as long as `some_field` has no value: 
+```
+readonly {{ true if not some_field else false}}
+```
 
-Example - always readonly, without any condition. Useful for output fields
-`readonly`
+Example - always readonly, without any condition. Useful for output fields: 
+```
+readonly
+```
 
-## attributes
+### attributes
 Allows adding custom HTML attributes to the block's element. It has the following sub-properties:
 * `class` - Adds one or more CSS classes to the element. You can use common tailwind classes or your own custom classes
 * `style` - Adds inline CSS styles to the element.
@@ -102,25 +106,31 @@ attributes
   style "border-radius: 5px;"
 ```
 
-## min
+### min
 The minimum allowed value for numeric, date, or rating inputs.
 
-Example:
-`min 0`
+Example: 
+```
+min 0
+```
 
-## max
+### max
 The maximum allowed value for numeric, date, or rating inputs.
 
-Example:
-`max 100`
+Example: 
+```
+max 100
+```
 
-## step
+### step
 The increment/decrement step for numeric inputs like `number` and `slider`.
 
-Example:
-`step 5`
+Example: 
+```
+step 5
+```
 
-## options
+### options
 A list of choices for `select`, `radio`, and `checkbox` fields. Each option should have a `label` (the text shown to the user) and can have an optional `value` (the value that is submitted). If `value` is omitted, the `label` is used as the value. Note that labels are indented under the property name `options`, and values are further indented under each label.
 
 Example:
@@ -134,27 +144,30 @@ options
 
 # Blocks
 
-## form
+### form
 The `form` block must be the first block in every Form Descriptor (`.fd`). It provides metadata about the entire form. It has the following properties:
-* `name` - Required. the name of the form. Not exposed to users. E.g.:
-  `name Contact form`
-* `success-message` - The message that users will see when the form is submitted successfully. E.g.:
-  `success-message Thanks for signing up. See you at the event!`
-* `fail-message` - The message that users will see if there was some error while submitting the form. This is not related to validation errors, but rather unexpected errors like network issues. E.g.:
-  `fail-message There was an unexpected error. Please try again.`
-* `design` - This is a property that has several sub-properties related to the design of the form. E.g.:
-  ```text
-  design
-    background #99ffff
-    cover https://images.unsplash.com/photo-1729353639014-6eced0fd2a5c?fm=jpg&q=60&w=1920
-  ```
+* `name` - Required. the name of the form. Not exposed to users.
+* `success-message` - The message that users will see when the form is submitted successfully.
+* `fail-message` - The message that users will see if there was some error while submitting the form. This is not related to validation errors, but rather unexpected errors like network issues.
+* `design` - This is a property that has several sub-properties related to the design of the form.
   * `background` - this can be any valid css value that for the `background` of the entire page. Commonly used with a color value.
   * `cover` - a URL for a cover image that will appear at the top of the page
   * `cover-offset` - `0` - `100`, default is `50`. The cover image is commonly cropped, because it has a max height. This property sets which part of the image will be visible. The default is `50` which means that the center part of the image will be visible. Set this to `0` if you want the top of the image to be visible, or to `100` if you want the bottom of the image to be visible.
 
+Example: 
+```text
+type form
+name Event registration form
+success-message Thanks for signing up. See you at the event!
+fail-message There was an unexpected error. Please try again.
+design
+    background #99ffff
+    cover https://images.unsplash.com/photo-1729353639014-6eced0fd2a5c?fm=jpg&q=60&w=1920
+```
+
 ---
 
-## h1 - h6
+### h1 - h6
 These blocks are used to display heading text on your form.
 
 * `text` - Required. The content of the heading.
@@ -169,7 +182,7 @@ text Contact Information
 
 ---
 
-## p
+### p
 Displays a paragraph of text.
 
 * `text` - Required. The content of the paragraph.
@@ -184,7 +197,7 @@ text We'll use this information to get in touch with you.
 
 ---
 
-## html
+### html
 This block allows you to embed raw HTML content directly into your form. Any script will be stripped out. Unlike other fields, this block does not have any named properties. Simply type your HTML and leave an empty line after that.
 > **Important note:** Be extra careful when using this block, as you might break the entire page. If you're using [form logic](logic.md) to output any field value provided by the user, always use the [escape filter](logic.md#escape) to prevent code injection.
 
@@ -199,7 +212,7 @@ type html
 
 ---
 
-## text
+### text
 A standard single-line text input field.
 
 * `name` - Required. See [name](#name).
@@ -222,7 +235,7 @@ validations required
 
 ---
 
-## email
+### email
 A text input field for email addresses. Input will be automatically validated to ensure it's a valid email format.
 
 * `name` - Required. See [name](#name).
@@ -246,7 +259,7 @@ validations required|email
 
 ---
 
-## tel
+### tel
 A text input field for telephone numbers.
 
 * `name` - Required. See [name](#name).
@@ -269,7 +282,7 @@ placeholder (555) 123-4567
 
 ---
 
-## date
+### date
 A date picker input field.
 
 * `name` - Required. See [name](#name).
@@ -293,7 +306,7 @@ max 2025-08-31
 
 ---
 
-## textarea
+### textarea
 A multi-line text input field.
 
 * `name` - Required. See [name](#name).
@@ -317,7 +330,7 @@ rows 4
 
 ---
 
-## number
+### number
 An input for numeric values.
 
 * `name` - Required. See [name](#name).
@@ -342,7 +355,7 @@ step 1
 
 ---
 
-## select
+### select
 A dropdown list for selecting one or more options.
 
 * `name` - Required. See [name](#name).
@@ -372,7 +385,7 @@ options
 
 ---
 
-## radio
+### radio
 A set of radio buttons, allowing the user to select one option from a list.
 
 * `name` - Required. See [name](#name).
@@ -399,7 +412,7 @@ options
 
 ---
 
-## checkbox
+### checkbox
 A single checkbox or a group of checkboxes for selecting multiple options.
 
 * `name` - Required. See [name](#name).
@@ -433,7 +446,7 @@ options
 
 ---
 
-## toggle
+### toggle
 A switch-style toggle, representing a boolean on/off state.
 
 * `name` - Required. See [name](#name).
@@ -457,7 +470,7 @@ off-value no
 
 ---
 
-## file
+### file
 Allows users to upload one or more files.
 
 * `name` - Required. See [name](#name).
@@ -490,7 +503,7 @@ max-file-size 5MB
 
 ---
 
-## slider
+### slider
 A slider for selecting a value from a numeric range.
 
 * `name` - Required. See [name](#name).
@@ -521,7 +534,7 @@ show-input
 
 ---
 
-## rating
+### rating
 A rating input, typically displayed as a series of stars.
 
 * `name` - Required. See [name](#name).
@@ -544,7 +557,7 @@ max 5
 
 ---
 
-## submit
+### submit
 The button that submits the form. If omitted, a default button will be added with the label "Submit"
 
 * `label` - Required. The text displayed on the button (e.g., "Submit", "Send").

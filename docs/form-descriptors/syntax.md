@@ -7,7 +7,7 @@ description: Form Descriptor syntax guide
 ## Overall structure
 
 Form descriptors (called `.fd` in short) are consisted of blocks. 
-Block can describe content or form fields. Full list of block types can be found [here](blocks.md)
+Blocks can describe either content or form fields. Full list of block types can be found [here](blocks.md). 
 Each block begins with `type` followed by a block type, then lists its properties.
 
 ```

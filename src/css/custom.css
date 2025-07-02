@@ -28,3 +28,10 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+html[data-embed='true'] .theme-doc-sidebar-container,
+html[data-embed='true'] .footer,
+html[data-embed='true'] .navbar,
+html[data-embed='true'] .theme-edit-this-page {
+  display: none;
+}

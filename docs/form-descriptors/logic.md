@@ -32,15 +32,19 @@ validations required|email
 This form defined a `full_name` and `email` fields. The label of the email field is personalized using the value provided by the user in the name field. If the user provided the name `Alexander`, then the label of the email field will be `What is your email address, Alexander?`. 
 The variable `full_name` corresponds to the `name` property of the first input field. When you write your logic, you can use any input field's `name` property as a variable.
 
-You may wonder what is the difference between `{% %}` and `{{ }}`. The first one is a [Tag](#tags) and the second one is an [Expression](#expressions). You can see how they work in the following sections.
+You may wonder what is the difference between `{% %}` and `{{ }}`. The first one is a [Tag](#tags) that performs an operation, and the second one is an [Expression](#expressions) that returns a value. You can see how they work in the following sections.
 
 ## Tags
 Tags are special blocks that perform operations on sections of the template. Supported tags are
-* **if** - conditional blocks
+
+### if
+Conditional blocks
   ```text
   {% if condition %}anything here will be output if the condition is true{% endif %}
   ```
-* **for** - iterate over arrays and dictionaries
+
+### for
+Iterate over arrays and dictionaries
   ```text
   {% for item in items %}
   <li>{{ item }}</li>
@@ -48,7 +52,9 @@ Tags are special blocks that perform operations on sections of the template. Sup
   <li>This would display if the 'item' collection were empty</li>
   {% endfor %}
   ```
-* **filter** - performs one or more filters (transformations) on the content of the block. See list of available filters [here](#filters)
+
+### filter
+Performs one or more filters (transformations) on the content of the block. See list of available filters [here](#filters)
   ```text
   {% filter upper %}This text will be uppercase{% endfilter %}
   ```
@@ -58,7 +64,7 @@ Tags are special blocks that perform operations on sections of the template. Sup
   ```
 
 ## Expressions
-Expression tags return a value that is being output. Here are some examples:
+Expressions return a value that is being output. Here are some examples:
 * `{{ full_name }}` - returns the value of the field with the name `full_name`
 * `{{ 3 + 5 }}` - returns 8
 * `{{ number_field > 8 }}` - returns true if the value of `number_field` is larger than `8`
@@ -85,9 +91,10 @@ Here's a full list of supported expression operators:
 * `<=` - less than or equals.
 
 ### Logic
-* 'and'
-* 'or'
-* 'not'
+* `and`
+* `or`
+* `not`
+
 You can use parentheses to group expressions. E.g.
 ```text
 {{ (number > 5 and another_number < 2) or number > 10 }}
@@ -99,7 +106,7 @@ If expression are similar to javascript's ternary operator. They use the followi
 {{ true_value if condition else false_value }}
 ```
 If `condition` has a truthy value, then `true_value` is returned. Otherwise, `false_value` is returned. 
-If expressions can also skip the `else` part, and then they will not output anything if the condition isn't met.
+`if` expressions can also skip the `else` part, and then they will not output anything if the condition isn't met.
 ```text
 {{ true_value if condition }}
 ```
@@ -175,9 +182,9 @@ Make the first letter uppercase, the rest lower case
 ```
 Outputs `This is a test`
 
-### default(default, [boolean])
-If the argument is `undefined`, returns `default`, otherwise the argument. If `boolean` is true, any JavaScript falsy value (`false`, `""`, `[]`, `0`, etc.) will return `default`
-```nunjucks
+### default(default_value, [boolean])
+If the input is `undefined`, returns `default_value`, otherwise it returns the input. If `boolean` is true, any JavaScript falsy value (`false`, `""`, `[]`, `0`, etc.) will return `default_value`
+```jinja2
 {{ name | default('John', true }}
 ```
 Outputs `John` if `name` is undefined, or the value of `name` if it is defined.
