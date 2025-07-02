@@ -8,7 +8,7 @@ description: MCP Server
 
 Form-Data MCP server exposes tools to help users create forms in AI Agent flows. 
 There are 2 tools exposed:
-1. Create Form Descriptor (`createFormDescriptor`) - returns the content of [`.fd` file](../form-descriptors/intro.md) based on a prompt and some additional optional parameters. This is useful for code-generating AI tools (like Claude Code and Cursor) that want to maintain `.fd` files as part of the code base. The forms can then be deployed using [`fd` cli](./quickstart.md).  
+1. Create Form Descriptor (`createFormDescriptor`) - returns the content of [`.fd` file](../form-descriptors/syntax.md) based on a prompt and some additional optional parameters. This is useful for code-generating AI tools (like Claude Code and Cursor) that want to maintain `.fd` files as part of the code base. The forms can then be deployed using [`fd` cli](./quickstart.md).  
 2. Create Form Studio Link (`createFormStudioLink`) - creates a form, and returns a link to [Form Studio](https://studio.form-data.com) that opens with that form in edit mode. This is useful for AI assistants (like Claude Desktop) that want to help users complete tasks such as "I need a form for...". In this flow there is no code base, to users are directed to [Form-Data Studio](https://studio.form-data.com) where they get the form that they have requested, and they can complete the flow by publishing it from the UI. 
 
 The MCP server itself is open (auth-less). Users can create `.fd` files and studio links without restriction. Only deployment using the cli requires authentication.

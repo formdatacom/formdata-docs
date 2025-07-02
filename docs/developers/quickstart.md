@@ -72,7 +72,7 @@ After running this command, a new file called `my-contact-form.fd` will be creat
 
 ## 3. Preview and edit your form locally
 
-If you're comfortable editing `.fd` files you can just do that in your IDE. See detailed instructions in [fd files](../form-descriptors/intro.md).
+If you're comfortable editing `.fd` files you can just do that in your IDE. See detailed instructions in [fd files](../form-descriptors/syntax.md).
 We also provide an **in-browser editor** with auto-complete, syntax highlighting, and AI assistant that can generate complete forms.
 To use it, type in your terminal:
 
