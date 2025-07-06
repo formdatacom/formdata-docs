@@ -12,6 +12,7 @@ Form Descriptors has a powerful syntax to create dynamic logic. You can use it t
 * Change the design of a component based on other fields
 * Use the value of one field in the label or help-text of another field
 * Create a dynamic html block that summarize the form values
+* Create a Quiz with score 
 
 ## Example 
 
