@@ -54,7 +54,7 @@ For example:
 type form
 name My form
 classes
-  label text-blue-500
+  label text-sky-500
   hint my-hint-class
 ```
 
