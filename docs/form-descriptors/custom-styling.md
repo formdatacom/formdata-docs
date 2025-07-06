@@ -23,7 +23,7 @@ All form fields follow the same html structure:
       <input class="formkit-input" type="text" name="text_1" id="input_0" aria-describedby="help-input_0">
     </div>
   </div>
-  <div class="formkit-help " id="help-input_0">Please enter your name above.</div>
+  <div class="formkit-help" id="help-input_0">Please enter your name above.</div>
   <ul class="formkit-messages">
     <li class="formkit-message" id="input_0-rule_required" data-message-type="validation">
         What is your name? is required.
@@ -61,8 +61,7 @@ classes
 ## Adding classes to specific fields
 In a similar way to the above, you may add classes to a specific field element. For example: 
 ```text
-
-```type checkbox
+type checkbox
 name consent
 label I agree to be contacted by phone
 classes
