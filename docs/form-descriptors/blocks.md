@@ -8,10 +8,10 @@ description: Form blocks
 Here's a full list of all supported blocks: 
 
 ## Content blocks
-[form](#form), [h1 - h6](#h1---h6), [p](#p), [html](#html)
+[form](#form), [h1 - h6](#h1---h6), [p](#p), [html](#html), [css](#css)
 
 ## Form fields
-[text](#text), [email](#email), [tel](#tel), [date](#date), [textarea](#textarea), [number](#number), [select](#select), [radio](#radio), [checkbox](#checkbox), [toggle](#toggle), [file](#file), [slider](#slider), [rating](#rating), [submit](#submit)
+[text](#text), [email](#email), [tel](#tel), [date](#date), [textarea](#textarea), [number](#number), [select](#select), [radio](#radio), [checkbox](#checkbox), [toggle](#toggle), [file](#file), [slider](#slider), [rating](#rating), [color](#color) [submit](#submit)
 
 # Common properties
 
@@ -95,7 +95,7 @@ readonly
 ```
 
 ### attributes
-Allows adding custom HTML attributes to the block's element. It has the following sub-properties:
+Allows adding custom HTML attributes to non-field blocks `h1`-`h6` and `p`. It has the following sub-properties:
 * `class` - Adds one or more CSS classes to the element. You can use common tailwind classes or your own custom classes
 * `style` - Adds inline CSS styles to the element.
 
@@ -104,6 +104,16 @@ Example:
 attributes
   class py-6 my-class
   style "border-radius: 5px;"
+```
+
+### classes
+Allows adding classes to form-field blocks, or globally to the form itself. See details in [Custom styling](./custom-styling.md)
+
+Example:
+```text
+classes
+  label text-sky-500
+  hint my-hint-class
 ```
 
 ### min
@@ -153,6 +163,7 @@ The `form` block must be the first block in every Form Descriptor (`.fd`). It pr
   * `background` - this can be any valid css value that for the `background` of the entire page. Commonly used with a color value.
   * `cover` - a URL for a cover image that will appear at the top of the page
   * `cover-offset` - `0` - `100`, default is `50`. The cover image is commonly cropped, because it has a max height. This property sets which part of the image will be visible. The default is `50` which means that the center part of the image will be visible. Set this to `0` if you want the top of the image to be visible, or to `100` if you want the bottom of the image to be visible.
+* `classes` - This property has several sub-properties that correspond to different sections of the form fields (label, hint, input, etc). Use it to defines classes that will be applied globally to the entire form. See [custom styling](./custom-styling.md) page.
 
 Example: 
 ```text
@@ -212,6 +223,23 @@ type html
 
 ---
 
+### css
+This block allows you to add custom CSS classes. Unlike other fields, this block does not have any named properties. Simply type your CSS and leave an empty line after that. See more details in [custom styling](./custom-styling.md) page.
+
+Example:
+```text
+type css
+.my-class {
+  color: #658273;
+}
+.another-class {
+  border: 1px solid red;
+}
+
+```
+
+---
+
 ### text
 A standard single-line text input field.
 
@@ -223,6 +251,7 @@ A standard single-line text input field.
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -243,10 +272,10 @@ A text input field for email addresses. Input will be automatically validated to
 * `placeholder` - See [placeholder](#placeholder).
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -267,10 +296,10 @@ A text input field for telephone numbers.
 * `placeholder` - See [placeholder](#placeholder).
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -290,10 +319,10 @@ A date picker input field.
 * `min` / `max` - The earliest and latest selectable dates in `YYYY-MM-DD` format. See [min](#min) and [max](#max).
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -315,10 +344,10 @@ A multi-line text input field.
 * `rows` - The visible number of lines in the text area.
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -342,6 +371,7 @@ An input for numeric values.
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -364,10 +394,10 @@ A dropdown list for selecting one or more options.
 * `multiple` - Set to `true` to allow selecting multiple options.
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -393,10 +423,10 @@ A set of radio buttons, allowing the user to select one option from a list.
 * `options` - Required. See [options](#options).
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -420,10 +450,10 @@ A single checkbox or a group of checkboxes for selecting multiple options.
 * `options` - If provided, creates a group of checkboxes. If omitted, it's a single checkbox. See [options](#options).
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example (single):
 ```text
@@ -454,10 +484,10 @@ A switch-style toggle, representing a boolean on/off state.
 * `on-value` / `off-value` - The values submitted when the toggle is on or off. Defaults to `true` and `false`.
 * `on-value-label` / `off-value-label` - Custom labels displayed for the on/off states.
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -487,10 +517,10 @@ Allows users to upload one or more files.
 * `locale` - Sets the language for the uploader widget.
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -516,10 +546,10 @@ A slider for selecting a value from a numeric range.
 * `mark-labels` - Set to `true` to show labels for the marks.
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -542,10 +572,10 @@ A rating input, typically displayed as a series of stars.
 * `min` / `max` - The range for the rating. Defaults to a 1-5 star rating if not specified. See [min](#min) and [max](#max).
 * `validations` - See [validations](#validations).
 * `help` - See [help](#help).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
@@ -557,15 +587,52 @@ max 5
 
 ---
 
+### color
+A color picker input
+* `name` - Required. See [name](#name).
+* `label` - Required. See [label](#label).
+* `options` - If set, shows a preset swatch that users can choose from. See [options](#options).
+* `validations` - See [validations](#validations).
+* `help` - See [help](#help).
+* `show` / `hide` - See [show](#show) and [hide](#hide).
+* `disabled` - See [disabled](#disabled).
+* `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
+* `alpha` - A boolean (true/false) that defines whether color transparency can be set. Default is true
+* `eye-dropper` - A boolean (true/false) that defines whether eye-dropper tool is available for users to sample colors from the page. Default is true.
+* `swatch-only` - A boolean (true/false) that defines whether only one of the colors defined in the `options` list can be picked. If set to `false`, users can pick any color. Default is false.
+* `inline` - A boolean (true/false) that defines whether the picker widget should be laid out as part of the form rather than appear as a popover. Default is false.
+
+Example: 
+```text
+type color
+name shirt_color
+label What color would you like your shirt?
+validations required
+help We recommend the blue
+options
+  Classic white
+    value #ffffff
+  Navy blue
+    value #003366
+  Soft pink
+    value #ffb6c1
+  #F90D1B
+eye-dropper 
+swatch-only 
+inline true
+```
+---
+
 ### submit
 The button that submits the form. If omitted, a default button will be added with the label "Submit"
 
 * `label` - Required. The text displayed on the button (e.g., "Submit", "Send").
 * `name` - See [name](#name).
-* `attributes` - See [attributes](#attributes).
 * `show` / `hide` - See [show](#show) and [hide](#hide).
 * `disabled` - See [disabled](#disabled).
 * `readonly` - See [readonly](#readonly).
+* `classes` - See [classes](#classes)
 
 Example:
 ```text
