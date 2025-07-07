@@ -164,6 +164,10 @@ The `form` block must be the first block in every Form Descriptor (`.fd`). It pr
   * `cover` - a URL for a cover image that will appear at the top of the page
   * `cover-offset` - `0` - `100`, default is `50`. The cover image is commonly cropped, because it has a max height. This property sets which part of the image will be visible. The default is `50` which means that the center part of the image will be visible. Set this to `0` if you want the top of the image to be visible, or to `100` if you want the bottom of the image to be visible.
 * `classes` - This property has several sub-properties that correspond to different sections of the form fields (label, hint, input, etc). Use it to defines classes that will be applied globally to the entire form. See [custom styling](./custom-styling.md) page.
+* `meta` - This property has several sub-properties that you can use in order to define meta tags on your form page. These meta tags affect how your form would look when being shared in social platforms and messaging apps
+  * `title` – sets the page title and social preview title
+  * `description` – appears in search snippets and social cards 
+  * `image` – shown in link previews (Open Graph & Twitter)
 
 Example: 
 ```text
@@ -173,7 +177,11 @@ success-message Thanks for signing up. See you at the event!
 fail-message There was an unexpected error. Please try again.
 design
     background #99ffff
-    cover https://images.unsplash.com/photo-1729353639014-6eced0fd2a5c?fm=jpg&q=60&w=1920
+    cover https://placehold.co/1920x400?text=Cover%20image
+meta
+    title Super Event registration form
+    description Sign up to the Super Event and join us learning with 2000 participants
+    image https://placehold.co/800x600?text=Super%20Event
 ```
 
 ---
