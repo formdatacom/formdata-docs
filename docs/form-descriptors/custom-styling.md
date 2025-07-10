@@ -11,6 +11,8 @@ Form data provides a flexible and powerful custom styling mechanism. Here's what
 - [Apply certain classes to specific fields](#adding-classes-to-specific-fields)
 - [Apply classes and style attributes to any html block](#adding-classes-and-style-to-html-elements) (h1-h6, p)
 - You can use either your [custom classes](#adding-custom-css-classes), or any common Tailwind CSS class
+- [Use custom fonts](#changing-the-default-fonts) in your form
+- [Remove the default _"Made with Form-Data"_ badge](#removing-form-data-branding).
 
 ## Anatomy of blocks
 All form fields follow the same html structure:
@@ -93,5 +95,37 @@ type css
 
 You may define any css class that you want, including media queries, animations, etc. 
 End your css block with an empty line before the next block. 
-The location of the css block does not matter. You can even define multiple css blocks if you want, all of them will be aggregated into one `<style>` block in the form page. 
+The location of the css block does not matter. You can even define multiple css blocks if you want, all of them will be aggregated into one `<style>` block in the form page.
 
+> **Note:** This feature is only available as part of the Form Branding add-on, or the Power-up Bundle add-on. 
+
+### Changing the default fonts
+You can use the custom CSS block to change the default fonts. Here's an example:
+```text
+type css
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:ital,wght@400,900&display=swap');
+.playfair, 
+.formkit-label {
+  font-family: "Playfair Display", serif;
+}
+
+type h1
+text Let's Get Started
+attributes
+  class playfair text-4xl
+```
+
+The CSS block imports the Playfair font from Google Fonts, and assigns it to `playfair` and `formkit-label` classes. 
+The `formkit-label` class is automatically assigned to all labels in the form, as demonstrated above. 
+The `playfair` class is used in the form's h1 header. 
+
+## Removing Form-Data branding
+Each form has a default "Made with Form-Data" badge. You may remove this badge by adding `remove-branding` attribute to the `form` block:
+
+```text
+type form
+name Contact form
+remove-branding
+``` 
+
+> **Note:** This feature is only available as part of the Form Branding add-on, or the Power-up Bundle add-on. 
